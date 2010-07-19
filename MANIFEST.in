@@ -1,0 +1,3 @@
+include robots/config/deployment.ini_tmpl
+recursive-include robots/public *
+recursive-include robots/templates *

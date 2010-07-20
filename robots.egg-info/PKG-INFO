@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: robots
-Version: 1.32
+Version: 1.33
 Summary: Pylons app to receive SMS from SonicMobile
 Home-page: http://www.resultpath.com/
 Author: Sam Sargeant

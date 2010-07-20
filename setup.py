@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='robots',
-    version='1.32',
+    version='1.33',
     description='Pylons app to receive SMS from SonicMobile',
     author='Sam Sargeant',
     author_email='sam@resultpath.com',

@@ -19,9 +19,11 @@ class QueueController(BaseController):
 		 	'outgoing': outgoing.qsize() }
 		
 	def put(self):	
-		messages.put( { 'keyword': request.GET['keyword'], 
-				'content': request.GET['content'] } )
-		return 'Message placed in queue: %s' % request.GET['content']
+		
+		msg = { 'keyword': request.GET['keyword'], 
+			'content': request.GET['content'] }
+		messages.put(msg)
+		return 'Message placed in queue: %s' % msg
 
 	@jsonify
 	def get(self):

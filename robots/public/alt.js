@@ -6,9 +6,9 @@ function get_next_message() {
 		success: function(message) {
 			var div = $('#' + message.keyword);
 			div.html(message.content);
-			div.animate(animate_in, {duration: 4000});
+			div.animate(animate_in, {duration: 5000});
 			div.delay(5000);
-			div.animate(animate_out, 2000);
+			div.animate(animate_out, 7000);
 		},
 		error: function() {
 			

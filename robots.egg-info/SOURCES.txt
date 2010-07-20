@@ -27,9 +27,13 @@ robots/lib/helpers.py
 robots/lib/queue.py
 robots/lib/threads.py
 robots/model/__init__.py
+robots/public/alt.html
+robots/public/alt.js
+robots/public/grid.css
 robots/public/index.html
 robots/public/jquery.async.js
 robots/public/jquery.js
+robots/public/main.css
 robots/public/main.js
 robots/tests/__init__.py
 robots/tests/test_models.py

@@ -1,0 +1,3 @@
+curl 'http://localhost:5001/queue/put?content=SS&keyword=grinder'
+curl 'http://localhost:5001/queue/put?content=SS&keyword=water'
+curl 'http://localhost:5001/queue/put?content=SS&keyword=fire'

@@ -1,0 +1,26 @@
+#fire {
+	opacity: 0;
+	background-color: red;
+}
+
+#water {
+	opacity: 0;
+	background-color: blue;
+}
+
+#grinder {
+	background-color: olive;
+	opacity: 0;
+}
+
+#placeholder, #fire, #water, #grinder {
+	margin-bottom: 5em;
+	text-align: center;
+	vertical-align: center;
+	font: bold xx-large "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+#fire, #water, #grinder {
+	min-height: 260px;
+	color: whitesmoke;
+} 

@@ -15,15 +15,13 @@ class QueueController(BaseController):
 
 	@jsonify
 	def size(self):
-		return { 'queue_size': messages.qsize() }
+		return { 'messages': messages.qsize(),
+		 	'outgoing': outgoing.qsize() }
 		
-	def put(self):
-		log.debug('put called via %s: %s' % (request.method, request.GET))
-		
-		messages.put( { 'content': 'drill for great justice!', 'id': 1, 'number': '+64 21 712 171' } )
-		messages.put( { 'content': 'Hey, what is doing down?', 'id': 2, 'number': '+64 21 712 171' } )
-		messages.put( { 'content': 'Fire the main guns!!!', 'id': 3, 'number': '+64 21 712 171' } )
-		messages.put( { 'content': 'Spray it, don\'t say it!', 'id': 4, 'number': '+64 21 712 171' } )
+	def put(self):	
+		messages.put( { 'keyword': request.GET['keyword'], 
+				'content': request.GET['content'] } )
+		return 'Message placed in queue: %s' % request.GET['content']
 
 	@jsonify
 	def get(self):
@@ -32,9 +30,16 @@ class QueueController(BaseController):
 		except:
 			return {}
 		
-		outgoing.put(msg)
-	
-		messages.task_done()	
-		messages.save()
+		log.info("Displaying message: %s" % msg['content'])
 		
+		outgoing.put(msg)
+		messages.save()		
 		return msg
+		
+	def clear_messages(self):
+		"""Remove all messages from the messages queue"""
+		try:
+			while True:
+				messages.get(block=False)
+		except:
+			return 'Message queue empty'

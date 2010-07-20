@@ -1,1 +1,2 @@
 Pylons>=1.0
+feedparser>=4.0

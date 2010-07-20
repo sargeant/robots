@@ -18,7 +18,6 @@ class PersistentQueue(Queue.Queue):
 				pass
 			else:
 				raise err
-		
-		
+				
 messages = PersistentQueue()
 outgoing = Queue.Queue()

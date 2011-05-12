@@ -90,9 +90,9 @@ class SonicPollerThread(threading.Thread):
 						if result.group(1).lower() in keyword.keys():
 							msg['keyword'] = result.group(1).lower()
 							if result.group(2):
-								msg['content'] = self._get_initials(result.group(2))
+								msg['content'] = 'Thanks ' + self._get_initials(result.group(2))
 						else:
-							msg['content'] = self._get_initials(entry.description)
+							msg['content'] = 'Thanks ' + self._get_initials(entry.description)
 							msg['keyword'] = random.choice(keyword.keys())
 						
 					log.debug("Adding to queue: %s" % msg)
